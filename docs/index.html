@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tsunagi — サポート</title><link rel="stylesheet" href="style.css"></head>
+<body><main>
+<h1>Tsunagi</h1>
+<p class="sub">パソコンで動かしている AI コーディングエージェントを、iPhone・iPad・Android から操作するアプリです。</p>
+<nav><a href="privacy.html">プライバシーポリシー</a><a href="https://github.com/macfixkou/tsunagi-host/issues">お問い合わせ</a></nav>
+
+<h2>1. パソコンにホストを入れる</h2>
+<p>操作したい Mac または Linux のターミナルで、次を実行します。</p>
+<pre><code>curl -fsSL https://macfixkou.github.io/tsunagi-host/install.sh | sh</code></pre>
+<p class="sub"><code>~/.local/bin/tsunagi</code> に入ります。Mac は Apple シリコン・Intel の両方に対応しています。Linux 版（x86_64 / arm64）は試験提供です。</p>
+
+<h2>2. ホストを起動する</h2>
+<pre><code>tsunagi host</code></pre>
+<p>はじめて起動すると、ペアリング用の QR コードが表示されます。QR コードは 1 回だけ、10 分以内に使えます。</p>
+
+<h2>3. アプリで QR コードを読み取る</h2>
+<p>アプリの「＋」から QR コードを読み取ると、その端末がホストに登録されます。以後は、登録した端末だけが接続できます。</p>
+
+<h2>よく使うコマンド</h2>
+<pre><code>tsunagi pair              # 端末を追加するための新しい QR コード
+tsunagi devices           # 登録済みの端末を一覧
+tsunagi revoke 名前       # 端末の登録を消す（すぐにつながらなくなります）
+tsunagi host --ports 3000,8080   # アプリから表示できるポートを絞る</code></pre>
+
+<h2>うまくいかないとき</h2>
+<ul>
+<li><b>「ホストにつながりません」</b> — パソコンで <code>tsunagi host</code> が動いているか、パソコンがスリープしていないかを確認してください。</li>
+<li><b>「このペアリングコードは使えません」</b> — コードは 1 回限りです。<code>tsunagi pair</code> で新しいコードを出してください。</li>
+<li><b>「この端末はホストに登録されていません」</b> — ホスト側で登録が消されています。もう一度ペアリングしてください。</li>
+<li><b>「中継でつながっています」と出る</b> — 回線の都合で直接つながらないときの表示です。内容は端末とホストの間で暗号化されたままで、そのまま使えます。</li>
+<li><b>端末をなくした</b> — ホストで <code>tsunagi revoke</code> を実行してください。</li>
+</ul>
+
+<h2>お問い合わせ</h2>
+<p>不具合の報告やご要望は <a href="https://github.com/macfixkou/tsunagi-host/issues">GitHub の Issues</a> へお寄せください。</p>
+</main></body></html>
