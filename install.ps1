@@ -3,7 +3,7 @@
 $ErrorActionPreference = 'Stop'
 $version = 'v0.2.0-windows-preview'
 $file = 'tsunagi-windows-x86_64.exe'
-$want = '7e958bf9b5b62b5eaf620a9b108beaa6ab46357ef718402bb68be66ae9fbffa0'
+$want = '69ad40ff16d2a6e1a87c3c411c7fc728db1e2f1e5d6fd7bf466076c109c4115f'
 $dir = Join-Path $env:LOCALAPPDATA 'Tsunagi'
 New-Item -ItemType Directory -Force -Path $dir | Out-Null
 $tmp = Join-Path $dir 'tsunagi.download'
